@@ -48,7 +48,7 @@
     left: $tm50percent;
     transform: $tmtranslatetransform;
     background-color: #fff;
-    border-radius: 4px;
+    border-radius: 10px;
     box-shadow: $tmwrapperboxshadow;
     display: flex;
     flex-direction: column;
@@ -187,8 +187,8 @@
   }
   &-tips-wrapper-24h {
     position: absolute;
-    height: 160px;
-    width: 160px;
+    height: 180px;
+    width: 180px;
     z-index: 0;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -572,7 +572,7 @@
     transform: translate(-50%, -50%);
     height: 32px;
     width: 32px;
-    top: 4px;
+    top: -6px;
     left: 1px;
   }
 
