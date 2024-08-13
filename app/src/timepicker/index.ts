@@ -79,8 +79,19 @@ export default class TimepickerUI {
 
   private _isModalRemove?: boolean;
 
+  private _originAddEventListener = HTMLElement.prototype.addEventListener;
+  private _elementEventListeners: any[] = [];
+
   constructor(element: HTMLElement, options?: OptionTypes) {
     this._element = element;
+    const that = this;
+
+    //backup event listeners
+    this._element.addEventListener = function (...args: any) {
+      that._elementEventListeners.push(args);
+      return that._originAddEventListener.apply(this, args);
+    };
+
     this._cloned = null;
     this._options = getConfig(
       { ...options, ...createObjectFromData(this._element?.dataset) },
@@ -318,7 +329,7 @@ export default class TimepickerUI {
       initCallback(callback as TypeFunction);
       // @ts-ignore
       // eslint-disable-next-line tree-shaking/no-side-effects-in-initialization
-    }, this._options.delayHandler || 300);
+    }, this._options.delayHandler);
 
   /**
    * @description The destroy method destroy actual instance of picker by cloning element.
@@ -338,6 +349,12 @@ export default class TimepickerUI {
     }
 
     this._cloned = this._element.cloneNode(true);
+
+    //restore event listeners
+    this._elementEventListeners.forEach((args) => {
+      this._cloned!.addEventListener.apply(this._cloned, args);
+    });
+
     this._element.after(this._cloned);
     this._element.remove();
     // @ts-ignore
@@ -1717,7 +1734,7 @@ export default class TimepickerUI {
           }, 300);
         }, 300);
       }
-    }, this._options.delayHandler || 300);
+    }, this._options.delayHandler!);
 
   private _handleIconChangeView = async (): Promise<void> => {
     if (this._options.enableSwitchIcon) {
