@@ -1,29 +1,35 @@
 {
-  "name": "timepicker-ui",
-  "version": "2.6.1",
-  "description": "timepicker-ui is an easy library with timepicker. Created with TypeScript based on Material Design from Google.",
-  "main": "./dist/timepicker-ui.js",
-  "module": "./dist/timepicker-ui.esm.js",
-  "types": "./dist/types/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pglejzer/timepicker-ui.git"
-  },
-  "keywords": [
-    "material-design",
-    "material",
-    "design",
-    "timepicker",
-    "ui",
-    "css",
-    "javascript",
-    "vanillajs",
-    "typescript"
-  ],
-  "author": "pglejzer",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pglejzer/timepicker-ui/issues"
-  },
-  "homepage": "https://github.com/pglejzer/timepicker-ui#readme"
+	"name": "@lolini/timepicker-ui",
+	"version": "2.6.3",
+	"description": "timepicker-ui is an easy library with timepicker. Created with TypeScript based on Material Design from Google.",
+	"main": "./dist/timepicker-ui.js",
+	"module": "./dist/timepicker-ui.esm.js",
+	"types": "./dist/types/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lolini/timepicker-ui.git"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	},
+	"keywords": [
+		"material-design",
+		"material",
+		"design",
+		"timepicker",
+		"ui",
+		"css",
+		"javascript",
+		"vanillajs",
+		"typescript"
+	],
+	"author": "lolini",
+	"contributors": [
+		"pglejzer"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/lolini/timepicker-ui/issues"
+	},
+	"homepage": "https://github.com/lolini/timepicker-ui#readme"
 }
