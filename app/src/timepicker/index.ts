@@ -365,6 +365,7 @@ export default class TimepickerUI {
     }
 
     this._element = this._cloned as HTMLElement;
+    createNewEvent(this._element, 'cloned', {});
   };
 
   /**
